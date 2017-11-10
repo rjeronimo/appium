@@ -6,7 +6,7 @@ Feature: Kudo someone on BX Connect
 		And I search "test" on Contacts Page 
 		
 	#Scenario: I filter a Contact Successfully 
-#		Then I see the complete name "Test User" in the profile screen 
+                #Then I see the complete name "Test User" in the profile screen 
 		#And I see the email "demo@belatrixsf.com" in the profile screen 
 		
  	Scenario: I Kudo a filtered Contact 

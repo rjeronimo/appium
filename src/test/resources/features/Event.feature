@@ -1,3 +1,4 @@
+@MyFirstCucumberFeature @RegressionNBankingAndroid
 Feature: Register Event
 
    Scenario: Register to Halloween Event
