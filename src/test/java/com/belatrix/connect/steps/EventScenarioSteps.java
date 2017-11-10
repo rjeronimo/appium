@@ -9,7 +9,9 @@ public class EventScenarioSteps extends ParentScenario {
 	
 	@When("^I register to \"([^\"]*)\" event$") 
 	public void I_register_to_Event(String event_name) {
-	     
+	     eventPage.goToEventsPage();
+	     eventPage.selectEvent(event_name);
+	     eventPage.registerToEvent();
 	}  
 
 	@When("^I unregister to \"([^\"]*)\" event$") 

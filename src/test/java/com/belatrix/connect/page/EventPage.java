@@ -13,14 +13,23 @@ public class EventPage extends ParentPage{
 		// TODO Auto-generated constructor stub
 	}
 
-	By TAB_EVENT = By.xpath("//android.widget.TextView[@text='EVENTS']");
+	By TAB_EVENT = By.xpath("//android.widget.TextView[@text='Events']");
+	//By EVENT_LABEL = By.xpath("//android.widget.TextView");
+	By EVENT_LABEL = By.id("com.belatrixsf.connect:id/event_title");
+	By MESSAGE_LABEL = By.xpath("//android.widget.TextView");
 	By REGISTER_BUTTOM = By.id("com.belatrixsf.connect:id/btn_register");
 	By CONFIRMATION_BUTTOM = By.id("android:id/button1");
 	By GOT_IT_BUTTOM = By.id("android:id/button1");
 	
-	public void goToEventsPage(String name) {
+	public void goToEventsPage() {
 		handlingWaitToElement(TAB_EVENT);
 		click(TAB_EVENT);
+	}
+	public void selectEvent(String event_name) {
+		//handlingWaitsToNewElementByText(EVENT_LABEL,event_name);
+		//clickElementByTextValue(EVENT_LABEL,event_name);
+		handlingWaitToElement(EVENT_LABEL);
+		click(EVENT_LABEL);
 	}
 	
 	public void registerToEvent() {
@@ -31,7 +40,9 @@ public class EventPage extends ParentPage{
 	}
 	
 	public boolean messageDisplayed(String message) {
-		return true;
+		handlingWaitsToNewElementByText(MESSAGE_LABEL,message);
+		return isElementPresentByText(message);
+		  
 	}
 	
 }

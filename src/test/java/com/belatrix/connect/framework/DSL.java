@@ -141,6 +141,9 @@ public abstract class DSL {
     	return driver.findElement(By.id(locator)).isDisplayed();
     }
 
+    public boolean isElementPresentByText(String name) {
+    	return driver.findElement(By.xpath("//android.widget.TextView[@text='"+name+"']")).isDisplayed();
+    }
 }
 
 
