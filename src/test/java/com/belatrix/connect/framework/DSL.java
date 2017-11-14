@@ -3,6 +3,8 @@ package com.belatrix.connect.framework;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -139,6 +141,14 @@ public abstract class DSL {
     
     public boolean isElementPresent(String locator) {
     	return driver.findElement(By.id(locator)).isDisplayed();
+    }
+    
+    public boolean isElementPresentByTextValue(By locator, String textValue)
+    {
+        By newLocator = By.xpath(locator.toString().replaceAll("(By.xpath: )|(\\[@text.*?\\])", "")
+                + "[@text='"+textValue+"']");
+        handlingWaitToElement(newLocator);
+        return ((WebElement) newLocator).isDisplayed();
     }
 
     public boolean isElementPresentByText(String name) {
