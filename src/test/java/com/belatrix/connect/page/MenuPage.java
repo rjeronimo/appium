@@ -13,7 +13,7 @@ public class MenuPage extends ParentPage{
     }
 	                    
 	By MENU = By.xpath("//android.widget.ImageButton[@content-desc=\"Open\"]");
-	By LOG_OUT = By.id("com.belatrixsf.connect:id/bottom_navigation_container"); //By.id("com.belatrixsf.connect:id/bottom_navigation_container");
+	By LOG_OUT = By.id("com.belatrixsf.connect:id/menu_logout"); //By.id("com.belatrixsf.connect:id/bottom_navigation_container");
     By MESSAGE_YES = By.id("android:id/button1");
     
     public void selectMenu() {
